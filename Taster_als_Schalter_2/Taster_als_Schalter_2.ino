@@ -14,12 +14,11 @@ OneButton taster(8, true);
 #define LED 13         //grüne LED an Pin 13
 #define Taster 8     //Taster an Pin 8
 
-boolean statusLED = false;
+boolean statusLED = 0;
 
 void setup()
 {
-  pinMode (13, OUTPUT);   //LED
-
+  pinMode (LED, OUTPUT);   //LED
   taster.attachClick(Funktion_Taster);
 }
 
@@ -28,11 +27,19 @@ void loop()
 {
   taster.tick();
   delay(10);
+  /*
+    taster.tick();
+    delay(10);
+    digitalWrite(LED, statusLED);
+  */
 }
 
 
 void Funktion_Taster()
 {
+  /*
+     statusLED=!statusLED;
+  */
   if (statusLED == 1)
   {
     digitalWrite (LED, LOW);
@@ -44,9 +51,3 @@ void Funktion_Taster()
     statusLED = 1;
   }
 }
-
-
-
-
-
-
