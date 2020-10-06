@@ -26,8 +26,8 @@ void setup()
 
 void loop()
 {
-    taster.tick();
-    delay(10);
+    taster.tick();                        //Erkennung ob Taser gedrückt wird
+    delay(10);                            //Vorgegeben von der Bibliohek OneButton
     digitalWrite(LED, merkerLED);
 }
 
